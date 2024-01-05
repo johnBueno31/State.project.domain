@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>California</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="sd.html">San Diego</a>
+            <a href="sac.html">Sacramento</a>
+            <a href="la.html">Los Angeles</a>
+            <a href="https://www.ca.gov/" target="_blank">CA.gov</a>
+            <a href="references.html">References</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-container">
+            <img src="assets/cali.jpg" alt="Golden gate bridge" class="cali-img">
+            <h1><em>California</em></h1>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>San Diego</h2>
+            <img src="assets/sd.jpg" alt="La Jolla beach">
+            <p>San Diego is famous for its sunny weather, beautiful beaches, and laidback culture. It is the southern most tip of California and is definitely worth visiting!</p>
+            <aside class="sd-aside">Since San Diego is only 20 minutes away from the Mexican border, some may argue they have the best Mexican food in California. <img src="assets/tacogif.gif" alt="Taco Gif"> </aside>
+        </section>
+
+        <section>
+            <h2>Sacramento</h2>
+            <img src="assets/Sac.jpg" alt="Sacramento monument">
+            <p>Sacramento is the capital of California. There is a lot of history to learn about dating all the way back to the gold rush.</p>        
+        </section>
+
+        <section>
+            <h2>Los Angeles</h2>
+            <img src="assets/la.jpg" alt="Downtown Hollywood">
+            <p>Los Angeles is a bustling city known for its great views, cultural melting pot, roaming movie stars, and great food. Although it may look like a small city, there is so much to do in the city of Angels. </p>
+        </section>
+
+    </main>
+
+    <form>
+        <label for="firstName">First Name:</label>
+        <input type="text" name="firstName" id="firstName" placeholder="Enter first name">
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" name="lastName" id="lastName" placeholder="Enter last name">
+
+        <label for="questionBox">Questions or concerns?</label>
+        <textarea name="questionBox" id="questionBox" cols="30" rows="10" placeholder="Enter here..."></textarea>
+
+        <label for="email">Enter your email:</label>
+        <input type="email" name="email" id="email" placeholder="Enter email">
+
+
+        <label for="verifyEmail">Verify your email:</label>
+        <input type="email" name="verifyEmail" id="verifyEmail" placeholder="Verify email">
+        <span id="emailMatchMessage"></span>
+        <input type="submit" class="submit-btn" id="verifyEmail">
+        
+    </form>
+</body>
+
+<script>
+    const emailInput = document.getElementById("email");
+    const verifyInput = document.getElementById("verifyEmail");
+    const emailMessage = document.getElementById("emailMatchMessage");
+
+    verifyInput.addEventListener("input", () => {
+        if (verifyInput.value === emailInput.value) {
+            emailMessage.textContent = "Emails match!";
+            emailMessage.style.color = "green";
+        } else {
+            emailMessage.textContent = "Emails do not match!";
+            emailMessage.style.color = "red";
+        }
+    }); 
+    
+</script>
+</html>
